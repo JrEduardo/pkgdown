@@ -189,7 +189,7 @@ init_site <- function(pkg = ".", path = "docs") {
 data_assets <- function(pkg = ".") {
   pkg <- as_pkgdown(pkg)
 
-  template <- pkg$meta[["template"]]
+  template <- pkg$meta[["templates"]]
 
   if (!is.null(template$assets)) {
     path <- rel_path(template$assets, base = pkg$path)
@@ -208,4 +208,3 @@ data_assets <- function(pkg = ".") {
 
   dir(path, full.names = TRUE)
 }
-

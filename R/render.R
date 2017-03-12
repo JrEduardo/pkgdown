@@ -82,10 +82,10 @@ data_template <- function(pkg = ".", depth = 0L) {
 template_path <- function(pkg = ".") {
   pkg <- as_pkgdown(pkg)
 
-  template <- pkg$meta[["template"]]
+  template <- pkg$meta[["templates"]]
 
   if (!is.null(template$path)) {
-    path <- rel_path(pkg$path, template_path)
+    path <- rel_path(pkg$path, template$path)
 
     if (!file.exists(path))
       stop("Can not find template path '", path, "'", call. = FALSE)
