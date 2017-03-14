@@ -89,7 +89,8 @@ package_rd <- function(path) {
 extract_tag <- function(x, tag) {
   x %>%
     purrr::keep(inherits, tag) %>%
-    purrr::map_chr(c(1, 1))
+    unlist %>% paste(collapse = "")
+    ## purrr::map_chr(c(1, 1))
 }
 
 is_internal <- function(x) {
